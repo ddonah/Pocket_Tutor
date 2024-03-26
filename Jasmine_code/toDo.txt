@@ -1,0 +1,11 @@
+Things that is completed:
+- questions.csv
+- send user to db
+- get user fron db
+- get question
+- mark correct/incorrect
+
+Things that still need to be done:
+- algorithm for next question
+- count and display result at end like "You got 8/10 correct"
+- add the image processing and math engine
