@@ -1,0 +1,812 @@
+.landing-page {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /*control size of page*/
+  .landing-page .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1920px;
+    height: 3057px;
+    position: relative;
+  }
+  
+  /*header*/
+  .landing-page .overlap {
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    top: 0;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .landing-page .button-FAQ {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 942px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    border-color: #000000;
+    box-shadow: 1.8px 1.8px 0px #000000;
+  }
+
+  .landing-page .button-FAQ:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.landing-page .button-FAQ:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+}
+  
+  .landing-page .text-wrapper {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 8px;
+    left: 23px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .button-contact {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1251px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+
+  .landing-page .button-contact:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.landing-page .button-contact:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+}
+  
+  .landing-page .button-Team {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1096px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+
+  .landing-page .button-Team:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.landing-page .button-Team:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+}
+  /*footer*/
+  .landing-page .overlap-group {
+    position: absolute;
+    width: 100%;
+    height: 78px;
+    top: 2979px;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .landing-page .p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px;
+    left: 34px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  /*footer*/
+  .landing-page .overlap-2 {
+    position: absolute;
+    width: 100%;
+    height: 618px;
+    top: 69px;
+    left: 0;
+    background-color: #d9e7f2;
+  }
+
+  .landing-page .text-wrapper-2 {
+    position: absolute;
+    width: 445px; /* 幅指定 */
+    height: 68px; /* 高さ指定 */
+    top: 35%; /* 上端から画面の中央に */
+    left: 50%; /* 左端から画面の中央に */
+    transform: translate(-50%, 0%); /* 要素の中心を画面の中心に合わせる */
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center; /* テキストを中央揃え */
+    letter-spacing: 0;
+    line-height: normal;
+}
+  
+.landing-page .button-solve {
+  all: unset;
+  box-sizing: border-box;
+  width: 106px;
+  height: 49px;
+  background-color: #fbca1f;
+  border-radius: 7.2px;
+  border: 3px solid;
+  box-shadow: 1.8px 1.8px 0px #000000;
+  position: absolute; /* 絶対位置ではなく、固定位置を指定 */
+  border-color: #000000;
+  top: 46%;
+  left: 46%;
+}
+
+  .landing-page .button-solve:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.landing-page .button-solve:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+}
+  
+/*solve text*/
+  .landing-page .text-wrapper-3 {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 11px;
+    left: 26px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+
+.landing-page .button-quiz {
+  all: unset;
+  box-sizing: border-box;
+  width: 106px;
+  height: 49px;
+  background-color: #fbca1f;
+  border-radius: 7.2px;
+  border: 3px solid;
+  box-shadow: 1.8px 1.8px 0px #000000;
+  position: absolute; 
+  border-color: #000000;
+  top: 56%;
+  left: 46%;
+}
+
+.landing-page .button-quiz:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.landing-page .button-quiz:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+}
+  
+  .landing-page .text-wrapper-4 {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 11px;
+    left: 26px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 900;
+    color: #000000;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  /*FAQ*/
+  .landing-page .overlap-group-2 {
+    position: absolute;
+    width: 100%;
+    height: 688px;
+    top: 687px;
+    left: 0;
+    background-color: #dae8f2;
+  }
+  
+  .landing-page .text-wrapper-5 {
+    position: absolute;
+    width: 445px; /* 幅指定 */
+    height: 68px; /* 高さ指定 */
+    top: 5%; /* 上端から画面の高さの5%の位置に */
+    left: 50%; /* 左端から画面の中央に */
+    transform: translate(-50%, 0); /* 水平方向の中心を合わせ、垂直方向は変更なし */
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center; /* テキストを中央揃え */
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+  
+  .landing-page .overlap-3 {
+    position: absolute;
+    width: 445px;
+    height: 128px;
+    top: 116px;
+    left: 25px;
+  }
+  
+  .landing-page .text-wrapper-6 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 0;
+    left: 0;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-7 {
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    top: 60px;
+    left: 36px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-8 {
+    top: 448px;
+    left: 61px;
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .overlap-4 {
+    position: absolute;
+    width: 445px;
+    height: 129px;
+    top: 380px;
+    left: 497px;
+  }
+  
+  .landing-page .text-wrapper-9 {
+    top: 61px;
+    left: 36px;
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .overlap-5 {
+    position: absolute;
+    width: 445px;
+    height: 122px;
+    top: 380px;
+    left: 971px;
+  }
+  
+  .landing-page .text-wrapper-10 {
+    top: 54px;
+    left: 34px;
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .overlap-6 {
+    position: absolute;
+    width: 448px;
+    height: 128px;
+    top: 116px;
+    left: 971px;
+  }
+  
+  .landing-page .text-wrapper-11 {
+    top: 60px;
+    left: 39px;
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .overlap-7 {
+    position: absolute;
+    width: 445px;
+    height: 125px;
+    top: 119px;
+    left: 498px;
+  }
+  
+  .landing-page .text-wrapper-12 {
+    top: 57px;
+    left: 35px;
+    position: absolute;
+    width: 409px;
+    height: 68px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-13 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 380px;
+    left: 25px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  /*Team Member*/
+  .landing-page .overlap-8 {
+    position: absolute;
+    width: 100%;
+    height: 879px;
+    top: 1375px;
+    left: 0;
+    background-color: #dae8f2;
+  }
+  
+  .landing-page .text-wrapper-14 {
+    position: absolute;
+    width: 588px;
+    height: 68px;
+    top: 119px;
+    left: 25px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-15 {
+    position: absolute;
+    width: 286px;
+    height: 68px;
+    top: 222px;
+    left: 67px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-16 {
+    position: absolute;
+    width: 286px;
+    height: 68px;
+    top: 222px;
+    left: 772px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-17 {
+    position: absolute;
+    width: 362px;
+    height: 68px;
+    top: 513px;
+    left: 67px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-18 {
+    position: absolute;
+    width: 492px;
+    height: 68px;
+    top: 513px;
+    left: 772px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .text-wrapper-19 {
+    position: absolute;
+    width: 445px; /* 幅指定 */
+    height: 68px; /* 高さ指定 */
+    top: 5%; /* 上端から画面の中央に */
+    left: 50%; /* 左端から画面の中央に */
+    transform: translate(-50%, 0%); /* 要素の中心を画面の中心に合わせる */
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center; /* テキストを中央揃え */
+    letter-spacing: 0;
+    line-height: normal;
+}
+  
+  .landing-page .rectangle {
+    top: 320px;
+    left: 61px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+  
+  .landing-page .rectangle-2 {
+    top: 320px;
+    left: 774px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+  
+  .landing-page .rectangle-3 {
+    top: 600px;
+    left: 774px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+  
+  .landing-page .rectangle-4 {
+    top: 600px;
+    left: 61px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+  
+  .landing-page .text-wrapper-20 {
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    top: 324px;
+    left: 299px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-21 {
+    top: 604px;
+    left: 299px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-22 {
+    top: 328px;
+    left: 1010px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-23 {
+    top: 608px;
+    left: 1010px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-24 {
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    top: 347px;
+    left: 299px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-25 {
+    top: 627px;
+    left: 299px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-26 {
+    top: 347px;
+    left: 1010px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-27 {
+    top: 627px;
+    left: 1010px;
+    position: absolute;
+    width: 279px;
+    height: 9px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  /*contact form*/
+  .landing-page .overlap-9 {
+    position: absolute;
+    width: 100%;
+    height: 725px;
+    top: 2254px;
+    left: 0;
+    background-color: #dae8f2;
+    display: flex;
+    justify-content: center; /* 水平方向の中心に配置 */
+    align-items: center; /* 垂直方向の中心に配置 */
+}
+
+  .form {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px -30px rgba(27, 26, 26, 0.315);
+  }
+  
+  .form .title {
+    color: royalblue;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .form input {
+    outline: 0;
+    border: 1px solid rgb(219, 213, 213);
+    padding: 8px 14px;
+    border-radius: 8px;
+    width: 90%;
+    height: 50px;
+  }
+  
+  .form textarea {
+    border-radius: 8px;
+    height: 100px;
+    width: 90%;
+    resize: none;
+    outline: 0;
+    padding: 8px 14px;
+    border: 1px solid rgb(219, 213, 213);
+  }
+  
+  .form button {
+    align-self: flex-end;
+    padding: 8px;
+    outline: 0;
+    border: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: royalblue;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  .landing-page .text-wrapper-30 {
+    position: absolute;
+    width: 62px;
+    height: 19px;
+    top: 6px;
+    left: 24px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 500;
+    color: #000000;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+    white-space: nowrap;
+  }
+  
+  .landing-page .text-wrapper-31 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 24px;
+    left: 470px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .landing-page .rectangle-5 {
+    top: 1695px;
+    left: 1483px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }

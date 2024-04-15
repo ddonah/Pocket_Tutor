@@ -1,0 +1,220 @@
+.solve-problem {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+/*control size of page*/
+.solve-problem .div {
+  background-color: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  height: 1080px;
+  position: relative;
+}
+
+/*header*/
+.solve-problem .overlap {
+  position: absolute;
+  width: 100%;
+  height: 69px;
+  top: 0;
+  left: 0;
+  background-color: #eef3ff;
+}
+
+.solve-problem .button-FAQ {
+  all: unset;
+  box-sizing: border-box;
+  position: absolute;
+  width: 99px;
+  height: 42px;
+  top: 17px;
+  left: 942px;
+  background-color: #5cbdfd;
+  border-radius: 7.2px;
+  border: 3px solid;
+  border-color: #000000;
+  box-shadow: 1.8px 1.8px 0px #000000;
+}
+
+.solve-problem .button-FAQ:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.solve-problem .button-FAQ:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em 0px #000000;
+}
+
+.solve-problem .text-wrapper {
+  position: absolute;
+  width: 54px;
+  height: 21px;
+  top: 8px;
+  left: 23px;
+  font-family: "Roboto", Helvetica;
+  font-weight: 800;
+  color: #000000;
+  font-size: 15px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.solve-problem .button-contact {
+  all: unset;
+  box-sizing: border-box;
+  width: 99px;
+  height: 42px;
+  top: 17px;
+  left: 1251px;
+  background-color: #5cbdfd;
+  border-radius: 7.2px;
+  border: 3px solid;
+  box-shadow: 1.8px 1.8px 0px #000000;
+  position: absolute;
+  border-color: #000000;
+}
+
+.solve-problem .button-contact:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.solve-problem .button-contact:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em 0px #000000;
+}
+
+.solve-problem .button-Team {
+  all: unset;
+  box-sizing: border-box;
+  width: 99px;
+  height: 42px;
+  top: 17px;
+  left: 1096px;
+  background-color: #5cbdfd;
+  border-radius: 7.2px;
+  border: 3px solid;
+  box-shadow: 1.8px 1.8px 0px #000000;
+  position: absolute;
+  border-color: #000000;
+}
+
+.solve-problem .button-Team:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.15em 0.15em 0px #000000;
+}
+
+.solve-problem .button-Team:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.05em 0.05em 0px #000000;
+}
+
+/*footer*/
+.solve-problem .overlap-group {
+  position: absolute;
+  width: 100%;
+  height: 78px;
+  top: 1000px;
+  left: 0;
+  background-color: #eef3ff;
+}
+
+.solve-problem .p {
+  position: absolute;
+  width: 308px;
+  height: 21px;
+  top: 27px;
+  left: 34px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+/*footer*/
+.solve-problem .overlap-2 {
+  position: absolute;
+  width: 100%;
+  height: 932px;
+  top: 69px;
+  left: 0;
+  background-color: #d9e7f2;
+  display: flex;
+  justify-content: center; /* 水平方向の中心に配置 */
+  align-items: center; /* 垂直方向の中心に配置 */
+}
+
+.solve-problem .text-wrapper-2 {
+  position: absolute;
+  width: 445px;
+  height: 68px;
+  top: 163px;
+  left: 458px;
+  font-family: "Inter", Helvetica;
+  font-weight: 800;
+  font-style: italic;
+  color: #000000;
+  font-size: 40px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.solve-problem .rectangle-5 {
+  top: 1695px;
+  left: 1483px;
+  position: absolute;
+  width: 168px;
+  height: 172px;
+  background-color: #d9d9d9;
+}
+
+
+.file-upload-button {
+  position: absolute;
+  top: 70%; /* 上から50pxの位置 */
+  right: center; /* 右から30pxの位置 */
+}
+
+.file-upload-button {
+  border: none;
+  display: flex;
+  padding: 0.75rem 1.5rem;
+  background-color: #488aec;
+  color: #ffffff;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 0.5rem;
+  user-select: none;
+  gap: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(72, 138, 236, 0.19), 0 2px 4px -1px rgba(72, 138, 236, 0.09);
+  transition: all 0.6s ease;
+}
+
+.file-upload-button:hover {
+  box-shadow: 0 10px 15px -3px rgba(72, 138, 236, 0.31), 0 4px 6px -2px rgba(72, 138, 236, 0.09);
+}
+
+.file-upload-button:focus, .file-upload-button:active {
+  opacity: 0.85;
+  box-shadow: none;
+}
+
+.file-upload-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
