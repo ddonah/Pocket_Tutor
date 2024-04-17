@@ -1,0 +1,4 @@
+To Do:
+Research Math Engines see how they should work.
+Reframe Executive Summary as "Different from Photomath and explaining MVP"
+
