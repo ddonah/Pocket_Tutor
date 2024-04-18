@@ -1,0 +1,288 @@
+.login-quiz {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .login-quiz {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .login-quiz .div, .login-quiz .overlap, .login-quiz .overlap-group, .login-quiz .overlap-2, .login-quiz .overlap-group-2, .login-quiz .overlap-8, .login-quiz .overlap-9 {
+      width: 100%; /* コンテナの幅をビューポートに合わせて100%に設定 */
+      height: auto; /* 高さを自動調整 */
+    }
+  
+    .login-quiz .button, .login-quiz .button-2, .login-quiz .button-3, .login-quiz .button-4, .login-quiz .button-5 {
+      width: 80%; /* ボタンの幅を80%に設定 */
+      margin: 0 auto; /* 中央揃え */
+      left: 10%; /* 左の位置を10%に設定して中央に配置 */
+      top: auto; /* トップの位置を自動に設定 */
+      margin-bottom: 20px; /* 下のマージンを20pxに設定 */
+    }
+  
+    .login-quiz .form {
+      width: 90%; /* フォームの幅を90%に設定 */
+      left: 5%; /* 左の位置を5%に設定して中央に配置 */
+    }
+}
+
+  
+/*control size of page*/
+.login-quiz .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1440px;
+    height: 1080px;
+    position: relative;
+  }
+  
+  /*header*/
+  .login-quiz .overlap {
+    position: absolute;
+    width: 1440px;
+    height: 69px;
+    top: 0;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .login-quiz .button-FAQ {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 942px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    border-color: #000000;
+    box-shadow: 1.8px 1.8px 0px #000000;
+  }
+  
+  .login-quiz .button-FAQ:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .login-quiz .button-FAQ:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .login-quiz .text-wrapper {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 8px;
+    left: 23px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .login-quiz .button-contact {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1251px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .login-quiz .button-contact:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .login-quiz .button-contact:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .login-quiz .button-Team {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1096px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .login-quiz .button-Team:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .login-quiz .button-Team:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  /*footer*/
+  .login-quiz .overlap-group {
+    position: absolute;
+    width: 1440px;
+    height: 78px;
+    top: 1000px;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .login-quiz .p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px;
+    left: 34px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  /*footer*/
+  .login-quiz .overlap-2 {
+    position: absolute;
+    width: 1440px;
+    height: 932px;
+    top: 69px;
+    left: 0;
+    background-color: #d9e7f2;
+    display: flex;
+    justify-content: center; /* 水平方向の中心に配置 */
+    align-items: center; /* 垂直方向の中心に配置 */
+  }
+  
+  .login-quiz .text-wrapper-2 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 163px;
+    left: 458px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .login-quiz .rectangle-5 {
+    top: 1695px;
+    left: 1483px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+
+  /*login-form*/
+  .form {
+    background-color: #fff;
+    display: block;
+    padding: 1rem;
+    max-width: 90%;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .form-title {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 600;
+    text-align: center;
+    color: #000;
+  }
+  
+  .input-container {
+    position: relative;
+  }
+  
+  .input-container input, .form button {
+    outline: none;
+    border: 1px solid #e5e7eb;
+    margin: 8px 0;
+  }
+  
+  .input-container input {
+    background-color: #fff;
+    padding: 1rem;
+    padding-right: 3rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    width: 300px;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .input-container span {
+    display: grid;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    place-content: center;
+  }
+  
+  .input-container span svg {
+    color: #9CA3AF;
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .submit {
+    display: block;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    background-color: #4F46E5;
+    color: #ffffff;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    width: 100%;
+    border-radius: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .signup-link {
+    color: #6B7280;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    text-align: center;
+  }
+  
+  .signup-link a {
+    text-decoration: underline;
+  }

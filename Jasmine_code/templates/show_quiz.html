@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+   <!-- <link rel="stylesheet" href="globals.css" /> -->
+    <link rel="stylesheet" href="/static/show_quiz.css" />
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+  </head>
+  <body>
+    <div class="show-quiz">
+      <div class="div">
+        <div class="overlap">
+          <button class="button-FAQ"><div class="text-wrapper">FAQ</div></button>
+          <button class="button-contact"><div class="text-wrapper">Contact</div></button>
+          <button class="button-Team"><div class="text-wrapper">Team</div></button>
+        </div>
+        <div class="overlap-group"><p class="p">©︎ All rights reserve by Team Pocket Tutor 2024</p></div>
+        <div class="overlap-2" id="quiz">
+        <div id="question"></div>
+          <input id="answer" type="text" placeholder="Write here..." name="text" class="input">
+          <button onclick="submitAnswer()"> submit
+          </button>
+      </div>
+    </div>
+<script>
+    function displayQuestion(question, answer) {
+        console.log("Answer:", answer); // Print the answer to console for testing
+        document.getElementById("question").innerHTML = question;
+        document.getElementById("answer").value = ""; 
+        document.getElementById("quiz").dataset.correctAnswer = answer;
+        MathJax.typeset(); 
+    }
+
+    function submitAnswer() {
+        var userAnswer = document.getElementById("answer").value;
+        var correctAnswer = document.getElementById("quiz").dataset.correctAnswer;
+
+        fetch('/store_answer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userAnswer: userAnswer,
+                correctAnswer: correctAnswer
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (!data.success) {
+                console.error("Failed to store answer:", data.message);
+                return;
+            }
+            getNextQuestion();
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+
+    function getNextQuestion() {
+        fetch('/next_question')
+            .then(response => response.json())
+            .then(data => {
+                if (data.quiz_finished) {
+                    window.location.href = "/recap"; 
+                } else {
+                    displayQuestion(data.question, data.answer);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = function() {
+        getNextQuestion();
+    };
+</script>
+
+  </body>
+</html>

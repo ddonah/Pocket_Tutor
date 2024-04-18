@@ -1,0 +1,245 @@
+.show-quiz {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+
+  @media (max-width: 1080px) {
+    .show-quiz {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .show-quiz .div, .show-quiz .overlap, .show-quiz .overlap-group, .show-quiz .overlap-2, .show-quiz .overlap-group-2, .show-quiz .overlap-8, .show-quiz .overlap-9 {
+      width: 100%; /* コンテナの幅をビューポートに合わせて100%に設定 */
+      height: auto; /* 高さを自動調整 */
+    }
+  
+    .show-quiz .button, .show-quiz .button-2, .show-quiz .button-3, .show-quiz .button-4, .show-quiz .button-5 {
+      width: 80%; /* ボタンの幅を80%に設定 */
+      margin: 0 auto; /* 中央揃え */
+      left: 10%; /* 左の位置を10%に設定して中央に配置 */
+      top: auto; /* トップの位置を自動に設定 */
+      margin-bottom: 20px; /* 下のマージンを20pxに設定 */
+    }
+  
+    .show-quiz .form {
+      width: 90%; /* フォームの幅を90%に設定 */
+      left: 5%; /* 左の位置を5%に設定して中央に配置 */
+    }
+}
+
+  
+/*control size of page*/
+.show-quiz .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 1440px;
+    height: 1080px;
+    position: relative;
+  }
+  
+  /*header*/
+  .show-quiz .overlap {
+    position: absolute;
+    width: 1440px;
+    height: 69px;
+    top: 0;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .show-quiz .button-FAQ {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 942px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    border-color: #000000;
+    box-shadow: 1.8px 1.8px 0px #000000;
+  }
+  
+  .show-quiz .button-FAQ:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .show-quiz .button-FAQ:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .show-quiz .text-wrapper {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 8px;
+    left: 23px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .show-quiz .button-contact {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1251px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .show-quiz .button-contact:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .show-quiz .button-contact:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .show-quiz .button-Team {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1096px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .show-quiz .button-Team:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .show-quiz .button-Team:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  /*footer*/
+  .show-quiz .overlap-group {
+    position: absolute;
+    width: 1440px;
+    height: 78px;
+    top: 1000px;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .show-quiz .p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px;
+    left: 34px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  /*footer*/
+  .show-quiz .overlap-2 {
+    position: absolute;
+    width: 1440px;
+    height: 932px;
+    top: 69px;
+    left: 0;
+    background-color: #d9e7f2;
+    display: flex;
+    justify-content: center; /* 水平方向の中心に配置 */
+    align-items: center; /* 垂直方向の中心に配置 */
+  }
+  
+  .show-quiz .text-wrapper-2 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 163px;
+    left: 458px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .show-quiz .rectangle-5 {
+    top: 1695px;
+    left: 1483px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+
+  /*answer box*/
+  .input {
+    border-radius: 10px;
+    outline: 2px solid #FEBF00;
+    border: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #e2e2e2;
+    outline-offset: 3px;
+    padding: 10px 1rem;
+    transition: 0.25s;
+  }
+  
+  .input:focus {
+    outline-offset: 5px;
+    background-color: #fff
+  }
+
+  /*submit button*/
+  button {
+    background: #5cbdfd;
+    font-family: inherit;
+    padding: 0.6em 1.3em;
+    font-weight: 700;
+    font-size: 12px;
+    border: 0.5px solid black;
+    border-radius: 0.4em;
+    box-shadow: 0.01em 0.01em;
+    margin: 1.75em;
+  }
+  
+  button:hover {
+    transform: translate(-0.005em, -0.005em);
+    box-shadow: 0.15em 0.15em;
+  }
+  
+  button:active {
+    transform: translate(0.005em, 0.005em);
+    box-shadow: 0.05em 0.05em;
+  }
