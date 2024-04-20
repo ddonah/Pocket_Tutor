@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <!-- <link rel="stylesheet" href="globals.css" /> -->
+  <link rel="stylesheet" href="/static/recap_quiz.css" />
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="recap-quiz">
+    <div class="div">
+      <div class="overlap">
+        <a href="landing_page.html#faq-section" class="button-FAQ">
+          <div class="text-wrapper">FAQ</div>
+        </a>
+        <a href="landing_page.html#contact-form" class="button-contact">
+          <div class="text-wrapper">Contact</div>
+        </a>
+        <a href="landing_page.html#team-section" class="button-Team">
+          <div class="text-wrapper">Team</div>
+        </a>
+      </div>
+      <div class="overlap-group"><p class="p">©︎ All rights reserve by Team Pocket Tutor 2024</p></div>
+      <div class="overlap-2">
+        <div class="component">
+          <div class="you-ve-got"> You've got </div>
+          <div class="score"> 
+            {% if correct_answers_count %}
+            {{ (correct_answers_count / 10) * 100 }}%
+            {% else %}
+            0%
+            {% endif %}
+          </div>
+          <div class="review-your-quiz"> Review your quiz </div>
+          <div class="overlap-group">
+            <div class="display-the-wrong">
+              {% if wrong_answers %}
+              {% for wrong_answer in wrong_answers %}
+              <div class="wrong-answer">
+                <p>Question:  $${{ wrong_answer[0] }}$$</p>
+                <p>Your answer: {{ wrong_answer[1] }}</p>
+                <p>Correct answer:  {{ wrong_answer[2] }} </p> 
+        
+              </div>
+              {% endfor %}
+              {% else %}
+              <p>No wrong answers to display</p>
+              {% endif %}
+            </div>
+            <div class="rectangle-1"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

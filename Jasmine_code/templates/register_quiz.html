@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="globals.css" /> -->
+    <link rel="stylesheet" href="/static/register_quiz.css" />
+</head>
+<body>
+    <div class="register-quiz">
+      <div class="div">
+        <div class="overlap">
+          <button class="button-FAQ"><div class="text-wrapper">FAQ</div></button>
+          <button class="button-contact"><div class="text-wrapper">Contact</div></button>
+          <button class="button-Team"><div class="text-wrapper">Team</div></button>
+        </div>
+        <div class="overlap-group"><p class="p">©︎ All rights reserve by Team Pocket Tutor 2024</p></div>
+        <div class="overlap-2">
+        <form class="form" id="signupForm">
+ <p class="title">Register </p>
+            <p class="message">Signup now and get full access to our app. </p>
+                <div class="flex">
+
+                <label>
+                    <input required="" placeholder="" type="text" class="input" id="fname" name="fname">
+                    <span>Firstname</span>
+                </label>
+        
+                <label>
+                    <input required="" placeholder="" type="text" class="input" id="lname" name="lname">
+                    <span>Lastname</span>
+                </label>
+            </div>  
+                    
+            <label>
+                <input required="" placeholder="" type="email" class="input" id="email" name="email">
+                <span>Email</span>
+            </label> 
+                
+            <label>
+                <input required="" placeholder="" type="password" class="input" id="pass" name="pass">
+                <span>Password</span>
+            </label>
+            <label>
+                <input required="" placeholder="" type="password" class="input">
+                <span>Confirm password</span>
+            </label>    
+ <input class="submit" type="button" value="Submit" onclick="signup()">
+     <p class="signin">Already have an account? <a href="/login_quiz.html">Sign in</a></p>
+</form>
+</div>
+<script src="{{ url_for('static', filename='functions.js') }}"></script>
+</body>
+</html>
