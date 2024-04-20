@@ -88,6 +88,7 @@ class Equation():
     def solve(self, target=None):
         operations = {"^": lambda x, y: x**y, "*": lambda x, y:x*y, "/": lambda x, y: x / y, "+": lambda x, y: x+y, "-": lambda x, y: x-y}
 
+        # split equation into iterable parts
         eq = self.problem.split(" ")
         operators = ["^", "*", "/", "+", "-"]
         cursor = 0
@@ -154,9 +155,11 @@ class Problem(Equation):
                 operator_locations[1][mistake[1].problem[j]].insert(0, (j, mistake[1].problem[j]))
         
         # Find the missing operator
+        missing = [x for x in operators if (counts[0][x] - counts[1][x])]
+        
          
-        print(counts)
-        print(operator_locations)
+        '''print(counts)
+        print(operator_locations)'''
 
 
     def kind_of_mistake(self, incorrect_steps:tuple):
@@ -179,3 +182,22 @@ b = Equation("10 + 15")
 c = Equation("30")
 d = Problem([a, b, c])
 print(d.check_for_mistakes())
+
+def main():
+    usr_inp = input("Would you like to enter in an equation to solve, or steps from a problem? (e for equation, s for steps): ")
+    if usr_inp == 'e':
+        user_inp = input("Enter Equation with spaces between numbers: ")
+        usr_eq = Equation(user_inp)
+    elif usr_inp == 's':
+        steps = []
+        usr_inp = input("Please enter the current step or enter 'exit' to exit")
+        while usr_inp != "exit":
+            steps.append(usr_inp)
+            usr_inp = input("Please enter the current step or enter 'exit' to exit")
+        usr_problem = Problem(steps)
+
+    else:
+        print("I don't understand that input, please try again")
+            
+
+
