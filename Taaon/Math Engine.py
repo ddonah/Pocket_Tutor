@@ -73,81 +73,72 @@ def infix_to_postfix(s):
  
     return ' '.join(result)
 
-def postfix_to_infix(s):
-    pass
+def postfix_to_infix(exp):
+    s = [] 
+    def isOperand(x):
+        if len(x > 1) and x[0] == "-":
+            return True
+        elif x.isnumeric():
+            return True
+        else:
+            return (x >= 'a' and x <= 'z') or (x >= 'A' and x <= 'Z')
+
+    for i in exp:     
+         
+        # Push operands 
+        if (isOperand(i)) :         
+            s.insert(0, i) 
+             
+        # We assume that input is a 
+        # valid postfix and expect 
+        # an operator. 
+        else:
+         
+            op1 = s[0] 
+            s.pop(0) 
+            op2 = s[0] 
+            s.pop(0) 
+            s.insert(0, "(" + op2 + i + op1 + ")") 
+    return s[0]
 
 class Equation():
     def __init__(self, inp):
-        if len(inp.split("="))==1:
-            self.problem = infix_to_postfix(inp)
+        self.raw = inp
+        if "=" in inp:
+            self.problem = parse_expr(self.reorder(inp))
         else:
-            self.problem = [infix_to_postfix(inp.split("=")[0]), infix_to_postfix(inp.split("=")[1])]
+            self.problem = parse_expr(inp)
         self.target = None
         for ch in inp:
             if ch.isalpha():
-                self.target = ch
-                break
-        
-        self.answer = None
+                self.target = Symbol(ch)
+
     def __eq__(self, value:object) -> bool:
         return self.solve() == value.solve()
-    def __ne__(self, value:object):
+    def __ne__(self, value:object) -> bool:
         return self.solve() != value.solve()
-    def __repr__(self):
+    def __repr__(self) -> str:
         return self.problem
-    def __contains__(self, key):
+    def __str__(self) -> str:
+        return str(self.problem)
+    def __contains__(self, key)-> bool:
         return key in self.problem
 
-    def solve(self, problem = None):
-        operations = {"^": lambda x, y: x**y, "*": lambda x, y:x*y, "/": lambda x, y: x / y, "+": lambda x, y: x+y, "-": lambda x, y: x-y}
-        if type(self.problem) is str:
-            eq = self.problem.split(" ")
-            operators = ["^", "*", "/", "+", "-"]
-            cursor = 0
-            while any([op for op in operators if(op in eq)]):
-                if eq[cursor] not in operators:
-                    cursor += 1
-                    continue
-                fn = operations[eq[cursor]]
-                location = cursor
-                insert_index = location-2
-                operand1, operand2 = eq[location-2], eq[location-1]
-                eq.pop(location)
-                eq.pop(location-1)
-                eq.pop(location-2)
-                cursor = location-2
-                eq.insert(insert_index, str(fn(float(operand1), float(operand2))))
-            return "".join(eq)
-        elif problem:
-            eq = problem.split(" ")
-            operators = ["^", "*", "/", "+", "-"]
-            cursor = 0
-            while any([op for op in operators if(op in eq)]):
-                if eq[cursor] not in operators:
-                    cursor += 1
-                    continue
-                fn = operations[eq[cursor]]
-                location = cursor
-                insert_index = location-2
-                operand1, operand2 = eq[location-2], eq[location-1]
-                eq.pop(location)
-                eq.pop(location-1)
-                eq.pop(location-2)
-                cursor = location-2
-                eq.insert(insert_index, str(fn(float(operand1), float(operand2))))
-            return "".join(eq)
-        else:
-            self.reorder() # We need to reorder and then solve for target
+    def solve(self):
 
-    def solve_with_equal(self):
-        target = Symbol(self.target)
-        eq = parse_expr(self.problem)
-        inverse_operator = {"+":'-', "-":"+", "*": '/', "/":'*'}
-        eq = [self.problem[x].split(" ") for x in range(len(self.problem))]
-        if self.target in eq[0] and self.target in eq[1]:
-            
-            
-            
+        if self.target is None:
+            return solve(self.problem, rational=None)[0]
+        else:
+            return solve(self.problem, self.target, rational=None)[0]
+
+    def reorder(self, inp):
+        # We will be working with self.problem, which in this case will be an equation in the form
+        # nums = nums
+        eq = inp.split("=")
+        eq[0] = eq[0].split(" ")
+        eq[1] = eq[1].split(" ")
+        eq = ["("] + eq[0] + [")"] + [" - "] + ["("] + eq[1] + [")"]
+        return " ".join(eq)
 
 class Problem(Equation):
     # This class represents a line of a problem, you can solve for the answer
@@ -160,6 +151,10 @@ class Problem(Equation):
         self.steps = steps
         self.problem = steps[0] if steps != [] else None 
         # problem should be the first thing in the steps, everything is based off of that
+    def __repr__(self) -> str:
+        return [str(x) for x in (self.steps)]
+    def __str__(self) -> str:
+        return " |  ".join([str(x) for x in (self.steps)])
     
     def check_for_mistakes(self):
         #Assuming there are no mistakes, this program will return None, otherwise it will return a tuple
@@ -213,13 +208,11 @@ answers = ["2 3 *","2 3 4 * +", "a b * 5 +", "a b * c /", "a b c - d + / e a - *
 operators = {"^":5, "+":3, "-":3, "*": 4, "/":4}
 association = {"^":'r', "+":'l', "-":'l', "*": 'l', "/":'l'}
 
-a = Equation(" ( 7 + 4 ) / 2 = x")
-print(a.solve())
+a = Equation("4 * x = 2")
+b = Equation("x = 2 / 4")
+c = Problem([a, b])
+print(c)
 
-'''b = Equation("10 + 15")
-c = Equation("30")
-d = Problem([a, b, c])
-print(d.check_for_mistakes())'''
 
 def main():
     usr_inp = input("Would you like to enter in an equation to solve, or steps from a problem? (e for equation, s for steps): ")
@@ -236,6 +229,6 @@ def main():
 
     else:
         print("I don't understand that input, please try again")
-            
+
 
 
