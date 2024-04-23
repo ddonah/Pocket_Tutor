@@ -233,6 +233,35 @@
     background-color: #397d34;
 }
 
+.solve-problem-result {
+    position: relative; /* これが必要です */
+}
+
+.footer {
+    position: absolute; /* または fixed でも良いが、ページの特定の高さに配置するには absolute が適切 */
+    width: 100%; /* フッターが画面全幅を使用するように設定 */
+    top: 1000px; /* `.login-quiz .p`とは異なるが、この位置にフッターを設定する */
+    left: 0;
+    background-color: #eef3ff; /* フッターの背景色 */
+    height: 78px; /* 高さの設定 */
+}
+
+.footer p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px; /* 親要素 `.footer` の上から27pxの位置に配置 */
+    left: 34px; /* 親要素 `.footer` の左から34pxの位置に配置 */
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
     </style>
 <head>
     <meta charset="utf-8">
@@ -254,10 +283,6 @@
                     <div class="text-wrapper">Team</div>
                 </a>
             </div>
-            <!-- 著作権表示 -->
-            <div class="overlap-group">
-                <p>© All rights reserved by Team Pocket Tutor 2024</p>
-            </div>
             <!-- アップロードフォーム -->
             <div class="overlap-2">
                 <h1>Solution</h1>
@@ -269,6 +294,10 @@
                 </div>
             </div>
         </div>
+        <!-- 著作権表示、Flexコンテナから外す -->
+        <div class="footer">
+          <p>© All rights reserved by Team Pocket Tutor 2024</p>
+      </div>
     </div>
 </body>
 </html>
