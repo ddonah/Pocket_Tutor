@@ -1,4 +1,7 @@
-.solve-problem {
+<!DOCTYPE html>
+<html>
+    <style>
+        .solve-problem {
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
@@ -7,6 +10,7 @@
 }
 
 /*control size of page*/
+/*original name is solve-problem*/
 .solve-problem .div {
   background-color: #ffffff;
   overflow: hidden;
@@ -179,42 +183,78 @@
 }
 
 
-.file-upload-button {
-  position: absolute;
-  top: 70%; /* 上から50pxの位置 */
-  right: center; /* 右から30pxの位置 */
+h1 {
+  text-align: center; /* タイトルを中央揃え */
+  color: #273f6f; /* タイトルの色を設定 */
+  position: absolute; /* 絶対位置 */
+  top: 30%; /* 上辺から画面の半分の位置に設定 */
+  left: 50%; /* 左辺から画面の半分の位置に設定 */
+  transform: translate(-50%, -50%); /* 位置を左と上にそれぞれ50%ずつ調整 */
+  width: 100%; /* 幅を100%に設定 */
 }
 
-.file-upload-button {
-  border: none;
-  display: flex;
-  padding: 0.75rem 1.5rem;
-  background-color: #488aec;
-  color: #ffffff;
-  font-size: 0.75rem;
-  line-height: 1rem;
-  font-weight: 700;
-  text-align: center;
-  text-transform: uppercase;
-  vertical-align: middle;
-  align-items: center;
-  border-radius: 0.5rem;
-  user-select: none;
-  gap: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(72, 138, 236, 0.19), 0 2px 4px -1px rgba(72, 138, 236, 0.09);
-  transition: all 0.6s ease;
+form {
+  max-width: 300px; /* フォームの最大幅を設定 */
+  margin: 0 auto; /* フォームを中央に配置 */
+  padding: 20px; /* フォームの内側の余白を設定 */
+  background: #ffffff; /* フォームの背景色を設定 */
+  border-radius: 8px; /* フォームの角を丸くする */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* フォームに影をつける */
 }
 
-.file-upload-button:hover {
-  box-shadow: 0 10px 15px -3px rgba(72, 138, 236, 0.31), 0 4px 6px -2px rgba(72, 138, 236, 0.09);
+input[type="file"], input[type="submit"] {
+  width: 95%; /* 全幅設定 */
+  padding: 10px; /* パッド設定 */
+  margin-bottom: 20px; /* 下余白設定 */
+  margin-left: 2.5%; /* 左余白設定 */
+  border: none; /* 枠線無し */
+  border-radius: 4px; /* 角丸 */
+  cursor: pointer; /* カーソルポインター */
 }
 
-.file-upload-button:focus, .file-upload-button:active {
-  opacity: 0.85;
-  box-shadow: none;
+input[type="submit"] {
+  background-color: #4a67a1; /* 背景色設定 */
+  color: white; /* 文字色白 */
 }
 
-.file-upload-button svg {
-  width: 1.25rem;
-  height: 1.25rem;
+input[type="submit"]:hover {
+  background-color: #3b4f7a; /* ホバー時の背景色変更 */
 }
+
+    </style>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <div class="solve-problem">
+        <div class="div">
+            <!-- 上部リンクのグループ -->
+            <div class="overlap">
+                <a href="landing_page.html#faq-section" class="button-FAQ">
+                    <div class="text-wrapper">FAQ</div>
+                </a>
+                <a href="landing_page.html#contact-form" class="button-contact">
+                    <div class="text-wrapper">Contact</div>
+                </a>
+                <a href="landing_page.html#team-section" class="button-Team">
+                    <div class="text-wrapper">Team</div>
+                </a>
+            </div>
+            <!-- 著作権表示 -->
+            <div class="overlap-group">
+                <p>© All rights reserved by Team Pocket Tutor 2024</p>
+            </div>
+            <!-- アップロードフォーム -->
+            <div class="overlap-2">
+                <h1>Upload your Math Problem Image</h1>
+                <form action="/uploader" method="POST" enctype="multipart/form-data">
+                    <input type="file" name="file">
+                    <input type="submit" value="Upload"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
