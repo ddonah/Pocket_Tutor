@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <style>
-        .solve-problem-result {
+        .solve-problem-confirm {
     background-color: #ffffff;
     display: flex;
     flex-direction: row;
@@ -10,7 +10,7 @@
   }
   
   /*control size of page*/
-  .solve-problem-result .div {
+  .solve-problem-confirm .div {
     background-color: #ffffff;
     overflow: hidden;
     width: 100%;
@@ -19,7 +19,7 @@
   }
   
   /*header*/
-  .solve-problem-result .overlap {
+  .solve-problem-confirm .overlap {
     position: absolute;
     width: 100%;
     height: 69px;
@@ -28,7 +28,7 @@
     background-color: #eef3ff;
   }
   
-  .solve-problem-result .button-FAQ {
+  .solve-problem-confirm .button-FAQ {
     all: unset;
     box-sizing: border-box;
     position: absolute;
@@ -43,17 +43,17 @@
     box-shadow: 1.8px 1.8px 0px #000000;
   }
   
-  .solve-problem-result .button-FAQ:hover {
+  .solve-problem-confirm .button-FAQ:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em 0px #000000;
   }
   
-  .solve-problem-result .button-FAQ:active {
+  .solve-problem-confirm .button-FAQ:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em 0px #000000;
   }
   
-  .solve-problem-result .text-wrapper {
+  .solve-problem-confirm .text-wrapper {
     position: absolute;
     width: 54px;
     height: 21px;
@@ -68,7 +68,7 @@
     line-height: normal;
   }
   
-  .solve-problem-result .button-contact {
+  .solve-problem-confirm .button-contact {
     all: unset;
     box-sizing: border-box;
     width: 99px;
@@ -83,17 +83,17 @@
     border-color: #000000;
   }
   
-  .solve-problem-result .button-contact:hover {
+  .solve-problem-confirm .button-contact:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em 0px #000000;
   }
   
-  .solve-problem-result .button-contact:active {
+  .solve-problem-confirm .button-contact:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em 0px #000000;
   }
   
-  .solve-problem-result .button-Team {
+  .solve-problem-confirm .button-Team {
     all: unset;
     box-sizing: border-box;
     width: 99px;
@@ -108,43 +108,19 @@
     border-color: #000000;
   }
   
-  .solve-problem-result .button-Team:hover {
+  .solve-problem-confirm .button-Team:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: 0.15em 0.15em 0px #000000;
   }
   
-  .solve-problem-result .button-Team:active {
+  .solve-problem-confirm .button-Team:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: 0.05em 0.05em 0px #000000;
   }
   
-  /*footer*/
-  .solve-problem-result .overlap-group {
-    position: absolute;
-    width: 100%;
-    height: 78px;
-    top: 1000px;
-    left: 0;
-    background-color: #eef3ff;
-  }
-  
-  .solve-problem-result .p {
-    position: absolute;
-    width: 308px;
-    height: 21px;
-    top: 27px;
-    left: 34px;
-    font-family: "Inter", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 12px;
-    text-align: center;
-    letter-spacing: 0;
-    line-height: normal;
-  }
   
   /*footer*/
-  .solve-problem-result .overlap-2 {
+  .solve-problem-confirm .overlap-2 {
     position: absolute;
     width: 100%;
     height: 932px;
@@ -156,7 +132,7 @@
     align-items: center; /* 垂直方向の中心に配置 */
   }
   
-  .solve-problem-result .text-wrapper-2 {
+  .solve-problem-confirm .text-wrapper-2 {
     position: absolute;
     width: 445px;
     height: 68px;
@@ -172,7 +148,7 @@
     line-height: normal;
   }
   
-  .solve-problem-result .rectangle-5 {
+  .solve-problem-confirm .rectangle-5 {
     top: 1695px;
     left: 1483px;
     position: absolute;
@@ -183,7 +159,7 @@
 
   
 /* Centering the main content */
-.solve-problem-result .overlap-2 {
+.solve-problem-confirm .overlap-2 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -246,43 +222,74 @@ h1 {
     a > input[type="button"]:hover {
         background-color: #7f8c8d;
     }
+
+    .solve-problem-confirm {
+    position: relative; /* これが必要です */
+}
+
+.footer {
+    position: absolute; /* または fixed でも良いが、ページの特定の高さに配置するには absolute が適切 */
+    width: 100%; /* フッターが画面全幅を使用するように設定 */
+    top: 1000px; /* `.login-quiz .p`とは異なるが、この位置にフッターを設定する */
+    left: 0;
+    background-color: #eef3ff; /* フッターの背景色 */
+    height: 78px; /* 高さの設定 */
+}
+
+.footer p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px; /* 親要素 `.footer` の上から27pxの位置に配置 */
+    left: 34px; /* 親要素 `.footer` の左から34pxの位置に配置 */
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+}
+
+
+
     </style>
 </head>
 <body>
-    <body>
-        <div class="solve-problem-result">
-            <div class="div">
-                <!-- 上部リンクのグループ -->
-                <div class="overlap">
-                    <a href="landing_page.html#faq-section" class="button-FAQ">
-                        <div class="text-wrapper">FAQ</div>
-                    </a>
-                    <a href="landing_page.html#contact-form" class="button-contact">
-                        <div class="text-wrapper">Contact</div>
-                    </a>
-                    <a href="landing_page.html#team-section" class="button-Team">
-                        <div class="text-wrapper">Team</div>
-                    </a>
-                </div>
-                <!-- 著作権表示 -->
-                <div class="overlap-group">
-                    <p>© All rights reserved by Team Pocket Tutor 2024</p>
-                </div>
-                <!-- 確認フォーム -->
-                <div class="overlap-2">
-                    <h1>Is this correct?</h1>
-                    <img src="data:image/png;base64,{{ img_data }}" alt="Uploaded Image" />
-                    <form action="/finalize" method="post">
-                        <input type="hidden" name="img_data" value="{{ img_data }}">
-                        <label for="recognized_content">Recognized Content:</label>
-                        <textarea id="recognized_content" name="recognized_content">{{ recognized_content }}</textarea>
-                        <input type="submit" name="confirmation" value="Correct">
-                    </form>
-                    <a href="/" style="text-decoration: none;"><input type="button" value="Solve New Question"></a>
-                </div>
+  <body>
+    <div class="solve-problem-confirm">
+        <div class="div">
+            <!-- 上部リンクのグループ -->
+            <div class="overlap">
+                <a href="landing_page.html#faq-section" class="button-FAQ">
+                    <div class="text-wrapper">FAQ</div>
+                </a>
+                <a href="landing_page.html#contact-form" class="button-contact">
+                    <div class="text-wrapper">Contact</div>
+                </a>
+                <a href="landing_page.html#team-section" class="button-Team">
+                    <div class="text-wrapper">Team</div>
+                </a>
+            </div>
+            <!-- 確認フォーム -->
+            <div class="overlap-2">
+                <h1>Is this correct?</h1>
+                <img src="data:image/png;base64,{{ img_data }}" alt="Uploaded Image" />
+                <form action="/finalize" method="post">
+                    <input type="hidden" name="img_data" value="{{ img_data }}">
+                    <label for="recognized_content">Recognized Content:</label>
+                    <textarea id="recognized_content" name="recognized_content">{{ recognized_content }}</textarea>
+                    <input type="submit" name="confirmation" value="Correct">
+                </form>
+                <a href="/" style="text-decoration: none;"><input type="button" value="Solve New Question"></a>
             </div>
         </div>
-    </body>    
+        <!-- 著作権表示、Flexコンテナから外す -->
+        <div class="footer">
+            <p>© All rights reserved by Team Pocket Tutor 2024</p>
+        </div>
+    </div>
+</body>  
 </body>
 
 </html>
