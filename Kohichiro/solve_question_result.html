@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        .solve-problem-result {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /*control size of page*/
+  .solve-problem-result .div {
+    background-color: #ffffff;
+    overflow: hidden;
+    width: 100%;
+    height: 1080px;
+    position: relative;
+  }
+  
+  /*header*/
+  .solve-problem-result .overlap {
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    top: 0;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .solve-problem-result .button-FAQ {
+    all: unset;
+    box-sizing: border-box;
+    position: absolute;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 942px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    border-color: #000000;
+    box-shadow: 1.8px 1.8px 0px #000000;
+  }
+  
+  .solve-problem-result .button-FAQ:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .solve-problem-result .button-FAQ:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .solve-problem-result .text-wrapper {
+    position: absolute;
+    width: 54px;
+    height: 21px;
+    top: 8px;
+    left: 23px;
+    font-family: "Roboto", Helvetica;
+    font-weight: 800;
+    color: #000000;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .solve-problem-result .button-contact {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1251px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .solve-problem-result .button-contact:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .solve-problem-result .button-contact:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  .solve-problem-result .button-Team {
+    all: unset;
+    box-sizing: border-box;
+    width: 99px;
+    height: 42px;
+    top: 17px;
+    left: 1096px;
+    background-color: #5cbdfd;
+    border-radius: 7.2px;
+    border: 3px solid;
+    box-shadow: 1.8px 1.8px 0px #000000;
+    position: absolute;
+    border-color: #000000;
+  }
+  
+  .solve-problem-result .button-Team:hover {
+    transform: translate(-0.05em, -0.05em);
+    box-shadow: 0.15em 0.15em 0px #000000;
+  }
+  
+  .solve-problem-result .button-Team:active {
+    transform: translate(0.05em, 0.05em);
+    box-shadow: 0.05em 0.05em 0px #000000;
+  }
+  
+  /*footer*/
+  .solve-problem-result .overlap-group {
+    position: absolute;
+    width: 100%;
+    height: 78px;
+    top: 1000px;
+    left: 0;
+    background-color: #eef3ff;
+  }
+  
+  .solve-problem-result .p {
+    position: absolute;
+    width: 308px;
+    height: 21px;
+    top: 27px;
+    left: 34px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  /*footer*/
+  .solve-problem-result .overlap-2 {
+    position: absolute;
+    width: 100%;
+    height: 932px;
+    top: 69px;
+    left: 0;
+    background-color: #d9e7f2;
+    display: flex;
+    justify-content: center; /* 水平方向の中心に配置 */
+    align-items: center; /* 垂直方向の中心に配置 */
+  }
+  
+  .solve-problem-result .text-wrapper-2 {
+    position: absolute;
+    width: 445px;
+    height: 68px;
+    top: 163px;
+    left: 458px;
+    font-family: "Inter", Helvetica;
+    font-weight: 800;
+    font-style: italic;
+    color: #000000;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .solve-problem-result .rectangle-5 {
+    top: 1695px;
+    left: 1483px;
+    position: absolute;
+    width: 168px;
+    height: 172px;
+    background-color: #d9d9d9;
+  }
+
+  
+/* Centering the main content */
+.solve-problem-result .overlap-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9e7f2; /* Light blue background for the section */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Styling for the Solution title */
+.solve-problem-result h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px; /* Adds space below the header */
+}
+
+/* Styling the div that will contain the result */
+.solve-problem-result .result-container {
+    width: 80%; /* Takes up 90% of its parent's width */
+    max-height: 80%; /* Maximum width of the container */
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 20px; /* Adds space below the result container */
+}
+
+/* Styling for the button */
+.solve-problem-result .button-container button {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background for the button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* Hover effect for the button */
+.solve-problem-result .button-container button:hover {
+    background-color: #45a049;
+}
+
+/* Active state effect for the button */
+.solve-problem-result .button-container button:active {
+    background-color: #397d34;
+}
+
+    </style>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="result.css">
+</head>
+<body>
+    <div class="solve-problem-result">
+        <div class="div">
+            <!-- 上部リンクのグループ -->
+            <div class="overlap">
+                <a href="landing_page.html#faq-section" class="button-FAQ">
+                    <div class="text-wrapper">FAQ</div>
+                </a>
+                <a href="landing_page.html#contact-form" class="button-contact">
+                    <div class="text-wrapper">Contact</div>
+                </a>
+                <a href="landing_page.html#team-section" class="button-Team">
+                    <div class="text-wrapper">Team</div>
+                </a>
+            </div>
+            <!-- 著作権表示 -->
+            <div class="overlap-group">
+                <p>© All rights reserved by Team Pocket Tutor 2024</p>
+            </div>
+            <!-- アップロードフォーム -->
+            <div class="overlap-2">
+                <h1>Solution</h1>
+                <div class="result-container">
+                    {{ result|safe }}
+                </div>
+                <div class="button-container">
+                    <button onclick="history.back();">Solve New Question</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

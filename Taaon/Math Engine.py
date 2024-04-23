@@ -2,20 +2,22 @@
 # Taaon doing his best
 import unittest
 from sympy import Symbol
+from sympy import N as solve_nums
 from sympy.parsing import parse_expr
-from sympy.solvers import solve
+from sympy.solvers import solve as solve_for_target
 
 
-
-class TestFns(unittest.TestCase):
+# Defunct, do not use.
+"""class TestFns(unittest.TestCase):
     def test_infix_to_postfix(self):
         tests = ["2 + 3 * 4", "a*b+5", "(1+2)*7", "a * b / c", "( a / ( b - c + d ) ) * ( e - a ) * c"]
         answers = ["2 3 4 * +", "a b * 5 +", "a b * c /", "a b c - d + / e a - * c *"]
         for i in range(len(tests)):
             res = infix_to_postfix(tests[i])
-            self.assertEqual(answers[i], res)
+            self.assertEqual(answers[i], res)"""
 
 def pemdas(char):
+    # Helper function for changing infix to postfix, returns int representing hierarhy
     if char == '^':
         return 3
     elif char == '/' or char == '*':
@@ -25,15 +27,15 @@ def pemdas(char):
     else:
         return -1
 
-def postfix_to_infix(s):
-    pass
-
 def associativity(c):
+    # Another helper function for the infix to postfix fn
     if c == '^':
         return 'R'
     return 'L'
 
 def infix_to_postfix(s):
+    # does what function says through utilizing a stack and helper functions.
+    # returns string
     result = []
     stack = []
     i=0
@@ -74,6 +76,7 @@ def infix_to_postfix(s):
     return ' '.join(result)
 
 def postfix_to_infix(exp):
+    # same thing as infix, except turns to infix
     s = [] 
     def isOperand(x):
         if len(x > 1) and x[0] == "-":
@@ -102,13 +105,20 @@ def postfix_to_infix(exp):
     return s[0]
 
 class Equation():
+    '''
+    This function represents a line of an equation, it allows manipulation of the equations through sympy
+    and also can use equivalencies to allow future usage of systems of equations
+    '''
     def __init__(self, inp):
+        # for checking for mistakes
         self.raw = inp
+        # an equals sign must always have a target which equates to a variable to solve for
         if "=" in inp:
-            self.problem = parse_expr(self.reorder(inp))
+            self.problem = parse_expr(self.reorder(inp), evaluate=False)
         else:
-            self.problem = parse_expr(inp)
+            self.problem = parse_expr(inp, evaluate=False)
         self.target = None
+        # searches for first non-numeric character in equation to set as target
         for ch in inp:
             if ch.isalpha():
                 self.target = Symbol(ch)
@@ -125,15 +135,22 @@ class Equation():
         return key in self.problem
 
     def solve(self):
-
+        '''
+        Sympy defines their solve function as only solving for variables
+        simple algebra is defined as simplification, thus the different functions
+        '''
         if self.target is None:
-            return solve(self.problem, rational=None)[0]
+            return solve_nums(self.problem) # solve_nums() is the sympy.N() function aliased
         else:
-            return solve(self.problem, self.target, rational=None)[0]
+            return solve_for_target(self.problem, self.target, rational=None)[0] # solve_for_target is sympy.solvers.solve() function aliased
 
-    def reorder(self, inp):
-        # We will be working with self.problem, which in this case will be an equation in the form
-        # nums = nums
+    def reorder(self, inp:str):
+        """
+        This equation will return a string representing an equation equaling zero.
+        It's very basic but as an example x + 4 = 7 would return (x + 4) - (7). 
+        This is so sympy can then process the function
+        inp is the equation to be reordered.
+        """
         eq = inp.split("=")
         eq[0] = eq[0].split(" ")
         eq[1] = eq[1].split(" ")
@@ -141,7 +158,10 @@ class Equation():
         return " ".join(eq)
 
 class Problem(Equation):
-    # This class represents a line of a problem, you can solve for the answer
+    """
+    This represents the steps of a problem as entered into a file to be read.
+    It is essentially a list of Equation instances but adds some additional capability.
+    """
     def __init__(self, steps:list[str]|list[Equation]) -> None:
         if steps != []: # as in steps in the problem
             if type(list[0]) == str: # if strings or equations were passed
@@ -156,79 +176,72 @@ class Problem(Equation):
     def __str__(self) -> str:
         return " |  ".join([str(x) for x in (self.steps)])
     
-    def check_for_mistakes(self):
-        #Assuming there are no mistakes, this program will return None, otherwise it will return a tuple
-        # of the operator and the index of the operator in the step
+    def check_for_mistakes(self) -> str:
+        '''
+        Assuming there are no mistakes, this program will return None, otherwise it will return
+        the first operator in found to be different between the two steps.
+        '''
         mistake = None 
         for i in range(1, len(self.steps)): 
+            
             if self.steps[i] != self.steps[i-1]:# Comparing step with the step before it
                 mistake = (self.steps[i-1], self.steps[i])
                 break
         if not mistake: # Checking for all lines being equivalent
-            return mistake
+            return "No mistakes found! Good Work!"
+        failed_step = i +1
         
         operators = ["^", "*", "/", "+", "-"]
         counts = {0:{"^":0, "*":0, "/":0, "+":0, "-":0}, 1:{"^":0, "*":0, "/":0, "+":0, "-":0}}
-        operator_locations = {0:{"^":[], "*":[], "/":[], "+":[], "-":[]}, 1:{"^":[], "*":[], "/":[], "+":[], "-":[]}}
+        #operator_locations = {'prev':{"^":[], "*":[], "/":[], "+":[], "-":[]}, 'curr':{"^":[], "*":[], "/":[], "+":[], "-":[]}}
+        prev_step = mistake[0].raw
+        curr_step = mistake[1].raw
 
-        # for j in range(length(equation))
-        # mistake[0].problem = some equation
-        for j in range(len(mistake[0].problem)):
-            eq = mistake[0].problem # Selecting first problem from mistake container
-            if eq[j] in operators:
-                counts[0][eq[j]] += 1 # Keeping track of operator counts
-                operator_locations[0][eq[j]].insert(0, (j, eq[j])) # insert tuple with format (index position, operator)
-
-        # See last loop
-        for j in range(len(mistake[1].problem)):
-            if mistake[1].problem[j] in operators:
-                counts[1][mistake[1].problem[j]] += 1
-                operator_locations[1][mistake[1].problem[j]].insert(0, (j, mistake[1].problem[j]))
-        
+        # for j in range(length(equation class))
+        for i in range(len(prev_step)):
+             # Selecting first problem from mistake container
+            if prev_step[i] in operators:
+                counts[0][prev_step[i]] += 1 # Keeping track of operator counts
+                #operator_locations[0][eq[j]].insert(0, (j, eq[j])) # insert tuple with format (index position, operator)
+        for i in range(len(curr_step)):
+            if curr_step[i] in operators:
+                counts[1][curr_step[i]] += 1
         # Find the missing operator
         missing = [x for x in operators if (counts[0][x] - counts[1][x])]
-        
-         
-        '''print(counts)
-        print(operator_locations)'''
+        return self.define_mistake(missing[0], failed_step)
+    
+    @staticmethod
+    def define_mistake(inp, step_num) -> str:
+        error = ["You've made a ", None, " error on step " , str(step_num)]
+        if inp == '*':
+            error[1] = "multiplication"
+        elif inp == '/':
+            error[1] = "division"
+        elif inp == '+':
+            error[1] = "addition"
+        elif inp == '-':
+            error[1] = "subtraction"
+        elif inp == '^':
+            error[1] = "exponation"
+        else:
+            return "We aren't sure what error you made, but it was on step " + str(step_num)
+        return "".join(error)
 
 
-    def kind_of_mistake(self, incorrect_steps:tuple):
-        # In Development
-        operators = ["^", "*", "/", "+", "-"]
-        PEMDAS = "Pemdas Error"
-        inequality = "did function incorrectly"
-        
 
 
 
-tests = ["2 * 3", "2 + 3 * 4", "a * b + 5", "a * b / c", "( a / ( b - c + d ) ) * ( e - a ) * c"]
-answers = ["2 3 *","2 3 4 * +", "a b * 5 +", "a b * c /", "a b c - d + / e a - * c *"]
-
-operators = {"^":5, "+":3, "-":3, "*": 4, "/":4}
-association = {"^":'r', "+":'l', "-":'l', "*": 'l', "/":'l'}
-
-a = Equation("4 * x = 2")
-b = Equation("x = 2 / 4")
-c = Problem([a, b])
-print(c)
-
+def read_file(fname:str) -> Problem:
+    file = open(fname, 'r')
+    return Problem([Equation(x.rstrip('\n')) for x in file.readlines()])
 
 def main():
-    usr_inp = input("Would you like to enter in an equation to solve, or steps from a problem? (e for equation, s for steps): ")
-    if usr_inp == 'e':
-        user_inp = input("Enter Equation with spaces between numbers: ")
-        usr_eq = Equation(user_inp)
-    elif usr_inp == 's':
-        steps = []
-        usr_inp = input("Please enter the current step or enter 'exit' to exit")
-        while usr_inp != "exit":
-            steps.append(usr_inp)
-            usr_inp = input("Please enter the current step or enter 'exit' to exit")
-        usr_problem = Problem(steps)
-
-    else:
-        print("I don't understand that input, please try again")
+    fname = input("enter filename please")
+    problem = read_file(fname)
+    mistakes = problem.check_for_mistakes()
+    file = open("mistakes.txt", 'w')
+    file.write(mistakes)
+    file.close()
 
 
 
